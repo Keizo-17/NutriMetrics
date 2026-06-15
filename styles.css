@@ -1,0 +1,269 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-dark-2: #1e293b;
+  --bg-panel: #111827;
+  --bg-soft: #334155;
+  --text-main: #ffffff;
+  --text-soft: #cbd5e1;
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --secondary: #3b82f6;
+  --secondary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --neutral: #64748b;
+  --neutral-hover: #475569;
+  --border: #374151;
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-main);
+}
+
+/* ===== Pantalla de inicio ===== */
+.auth-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.auth-hero {
+  width: 100%;
+  max-width: 700px;
+}
+
+.auth-card {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+}
+
+.auth-card h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+}
+
+.auth-card p {
+  margin: 0 0 28px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+.auth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-large {
+  width: 260px;
+}
+
+/* ===== Botones ===== */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+}
+
+.btn-danger {
+  background: var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+.btn-neutral {
+  background: var(--neutral);
+}
+
+.btn-neutral:hover {
+  background: var(--neutral-hover);
+}
+
+/* ===== Modales ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9;
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  max-width: 360px;
+  transform: translate(-50%, -50%);
+  background: var(--bg-dark-2);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal input {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.modal input:focus {
+  border-color: var(--secondary);
+}
+
+.modal .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ===== Dashboard ===== */
+.dashboard-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-2));
+  padding: 24px;
+}
+
+.dashboard-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.topbar-title {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.topbar-subtitle {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+}
+
+.panel {
+  background: rgba(17, 24, 39, 0.92);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: var(--secondary);
+}
+
+.panel .btn-primary {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.resultado-card {
+  margin-top: 18px;
+  background: var(--bg-soft);
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.7;
+}
+
+.resultado-empty {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+/* ===== Tabla ===== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
