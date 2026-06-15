@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Nutricional</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Calculadora Nutricional</h2>
+
+  <div class="form">
+    <input type="number" id="peso" placeholder="Peso (kg)">
+    <input type="number" id="altura" placeholder="Altura (cm)">
+    <input type="number" id="edad" placeholder="Edad">
+
+    <select id="sexo">
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+    </select>
+
+    <select id="actividad">
+      <option value="1.2">Sedentario</option>
+      <option value="1.375">Ligero</option>
+      <option value="1.55">Moderado</option>
+      <option value="1.725">Activo</option>
+    </select>
+
+    <button onclick="calcular()">Calcular</button>
+  </div>
+
+  <div class="resultados" id="resultado"></div>
+
+  <button onclick="guardar()">Guardar datos</button>
+  <button onclick="verHistorial()">Ver historial</button>
+
+  <div id="historial"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
