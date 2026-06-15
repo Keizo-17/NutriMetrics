@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - NUTRICALCULO</title>
+  styles.css
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <div class="topbar">
+      <div>
+        <h1 class="topbar-title">NUTRICALCULO</h1>
+        <p class="topbar-subtitle">
+          Usuario activo: <span id="usuarioActivoTexto">-</span>
+        </p>
+      </div>
+
+      <button type="button" class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Menú izquierdo -->
+      <aside class="sidebar panel">
+        <h2>Acciones</h2>
+
+        <button type="button" class="btn btn-primary sidebar-btn" onclick="mostrarFormularioPaciente()">
+          Agregar Nuevo Paciente
+        </button>
+
+        <button type="button" class="btn btn-secondary sidebar-btn" onclick="mostrarBuscadorPacientes()">
+          Buscar Paciente
+        </button>
+      </aside>
+
+      <!-- Contenido derecho -->
+      <main class="content-area">
+        <!-- Panel formulario -->
+        <section id="panelFormulario" class="panel hidden">
+          <h2>Nuevo paciente</h2>
+
+          <div class="section-title">Información personal</div>
+
+          <div class="form-grid">
+            <input type="text" id="nombre" placeholder="Nombre" />
+            <input type="text" id="apellido" placeholder="Apellido" />
+
+            <select id="sexoPersonal">
+              <option value="">Sexo</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+
+            <input type="text" id="telefono" placeholder="Teléfono" />
+            <input type="email" id="correo" placeholder="Correo electrónico" />
+            <input type="text" id="direccion" placeholder="Dirección" />
+          </div>
+
+          <div class="section-title">Información nutricional</div>
+
+          <div class="form-grid">
+            <input type="number" id="edad" placeholder="Edad" />
+            <input type="number" id="peso" placeholder="Peso (kg)" />
+            <input type="number" id="estatura" placeholder="Estatura (cm)" />
+
+            <select id="actividad">
+              <option value="">Actividad física</option>
+              <option value="1.2">Sedentario</option>
+              <option value="1.375">Ligero</option>
+              <option value="1.55">Moderado</option>
+              <option value="1.725">Activo</option>
+              <option value="1.9">Muy activo</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary" onclick="guardarNuevoPaciente()">
+              Guardar paciente
+            </button>
+            <button type="button" class="btn btn-neutral" onclick="limpiarFormularioNuevoPaciente()">
+              Limpiar
+            </button>
+          </div>
+
+          <div id="resultadoRegistro" class="resultado-card">
+            <p class="resultado-empty">Aquí aparecerá el resultado inicial del paciente.</p>
+          </div>
+        </section>
+
+        <!-- Panel buscador -->
+        <section id="panelBusqueda" class="panel hidden">
+          <div class="table-header">
+            <h2>Buscar paciente</h2>
+            <input type="text" id="buscadorPacientes" placeholder="Buscar por nombre o apellido..." />
+          </div>
+
+          <div class="table-wrap">
+            <table id="tablaPacientes">
+              <thead>
+                <tr>
+                  <th>Nombre completo</th>
+                  <th>Teléfono</th>
+                  <th>Correo</th>
+                  <th>Última actualización</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Se llena con JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Mensaje inicial -->
+        <section id="panelBienvenida" class="panel">
+          <h2>Bienvenido</h2>
+          <p class="resultado-empty">
+            Selecciona una opción del menú para agregar o buscar pacientes.
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  script.js>
+</body>
+</html>
