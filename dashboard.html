@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+styles.css
+</head>
+
+<body>
+
+<h2>Panel Principal</h2>
+
+<button onclick="logout()">Cerrar sesión</button>
+
+<hr>
+
+<button onclick="mostrarFormulario()">➕ Agregar Nuevo Paciente</button>
+<button onclick="mostrarLista()">🔍 Buscar Paciente</button>
+
+<!-- FORMULARIO -->
+<div id="formulario" class="oculto">
+
+<h3>Información Personal</h3>
+<input id="nombre" placeholder="Nombre">
+<input id="apellido" placeholder="Apellido">
+<input id="telefono" placeholder="Teléfono">
+<input id="correo" placeholder="Correo">
+<input id="direccion" placeholder="Dirección">
+
+<select id="sexo">
+<option>Hombre</option>
+<option>Mujer</option>
+</select>
+
+<h3>Información Nutricional</h3>
+<input id="edad" placeholder="Edad">
+<input id="peso" placeholder="Peso">
+<input id="estatura" placeholder="Estatura">
+<input id="actividad" placeholder="Actividad">
+
+<button onclick="guardarPaciente()">Guardar</button>
+</div>
+
+<!-- LISTA -->
+<ul id="lista"></ul>
+
+script.jsscript>
+</body>
+</html>
