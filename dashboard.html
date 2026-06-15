@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - NUTRICALCULO</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <div class="topbar">
+      <div>
+        <h1 class="topbar-title">NUTRICALCULO</h1>
+        <p class="topbar-subtitle">
+          Usuario activo: <span id="usuarioActivoTexto">-</span>
+        </p>
+      </div>
+
+      <button type="button" class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- Panel de formulario -->
+      <section class="panel">
+        <h2>Registro de paciente</h2>
+
+        <!-- Campo oculto para edición -->
+        <input type="hidden" id="pacienteId" />
+
+        <div class="form-grid">
+          <input type="text" id="nombrePaciente" placeholder="Nombre del paciente" />
+          <input type="number" id="peso" placeholder="Peso (kg)" />
+
+          <input type="number" id="altura" placeholder="Altura (cm)" />
+          <input type="number" id="edad" placeholder="Edad" />
+
+          <select id="sexo">
+            <option value="">Sexo</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+
+          <select id="actividad">
+            <option value="">Actividad física</option>
+            <option value="1.2">Sedentario</option>
+            <option value="1.375">Ligero</option>
+            <option value="1.55">Moderado</option>
+            <option value="1.725">Activo</option>
+            <option value="1.9">Muy activo</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" onclick="guardarPaciente()">
+            Guardar cálculo
+          </button>
+          <button type="button" class="btn btn-neutral" onclick="limpiarFormulario()">
+            Limpiar
+          </button>
+        </div>
+
+        <div id="resultado" class="resultado-card">
+          <p class="resultado-empty">Aquí aparecerán los resultados del paciente.</p>
+        </div>
+      </section>
+
+      <!-- Panel de tabla -->
+      <section class="panel">
+        <div class="table-header">
+          <h2>Pacientes registrados</h2>
+          <input type="text" id="buscador" placeholder="Buscar paciente..." />
+        </div>
+
+        <div class="table-wrap">
+          <table id="tablaPacientes">
+            <thead>
+              <tr>
+                <th>Paciente</th>
+                <th>Calorías</th>
+                <th>IMC</th>
+                <th>Estado</th>
+                <th>Proteínas</th>
+                <th>Grasas</th>
+                <th>Carbohidratos</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Se llena con JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+``
