@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Dashboard</title>
 
-styles.css
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -14,6 +14,7 @@ styles.css
 
   <div class="topbar">
 
+    <!-- ✅ NOMBRE CORREGIDO -->
     <h2>NutriMetrics</h2>
 
     <!-- ✅ SOLO 1 BOTON -->
@@ -23,38 +24,16 @@ styles.css
 
   </div>
 
-  <div class="menu">
+  <hr>
 
-    <button onclick="mostrarFormulario()" class="btn verde">
-      ➕ Nuevo Paciente
-    </button>
+  <h3>Bienvenido al sistema</h3>
 
-    <button onclick="mostrarLista()" class="btn azul">
-      🔍 Buscar Paciente
-    </button>
-
-  </div>
-
-  <!-- FORMULARIO -->
-  <div id="formulario" class="contenido oculto">
-
-    <input id="nombre" placeholder="Nombre">
-    <input id="apellido" placeholder="Apellido">
-    <input id="edad" placeholder="Edad">
-    <input id="peso" placeholder="Peso">
-
-    <button onclick="guardarPaciente()" class="btn verde">
-      Guardar
-    </button>
-
-  </div>
-
-  <!-- LISTA -->
-  <ul id="lista" class="contenido"></ul>
+  <button class="btn verde">Agregar paciente</button>
+  <button class="btn azul">Buscar paciente</button>
 
 </div>
 
-script.jsscript>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>

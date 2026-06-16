@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NutriMetrics</title>
 
-<!-- ✅ CSS correcto -->
 <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -14,24 +13,22 @@
 
 <div class="card">
 
-  <!-- ✅ LOGO CORREGIDO -->
-  <img src="logo.png" class="logo" alt="Logo">
+  <!-- ✅ TU LOGO PERSONAL -->
+  <img src="NutriMetrics.png" class="logo">
 
   <h1>NutriMetrics</h1>
-  <p>Sistema de gestión nutricional</p>
+  <p>Gestión nutricional inteligente</p>
 
-  <button class="btn verde" onclick="mostrarLogin()">Iniciar sesión</button>
-  <button class="btn azul" onclick="mostrarRegistro()">Registrarse</button>
+  <button onclick="mostrarLogin()" class="btn verde">Iniciar sesión</button>
+  <button onclick="mostrarRegistro()" class="btn azul">Registrarse</button>
 
 </div>
 
 <!-- LOGIN -->
 <div id="loginModal" class="modal oculto">
   <h2>Iniciar sesión</h2>
-
   <input id="loginEmail" placeholder="Correo">
   <input id="loginPassword" type="password" placeholder="Contraseña">
-
   <button onclick="login()" class="btn verde">Entrar</button>
   <button onclick="cerrar()" class="btn gris">Cancelar</button>
 </div>
@@ -39,17 +36,15 @@
 <!-- REGISTRO -->
 <div id="registroModal" class="modal oculto">
   <h2>Registro</h2>
-
   <input id="registerUser" placeholder="Usuario">
   <input id="registerEmail" placeholder="Correo">
   <input id="registerPassword" type="password" placeholder="Contraseña">
-
   <button onclick="registrar()" class="btn azul">Crear cuenta</button>
   <button onclick="cerrar()" class="btn gris">Cancelar</button>
 </div>
 
-<!-- ✅ SCRIPT correcto -->
 <script type="module" src="script.js"></script>
 
 </body>
 </html>
+``

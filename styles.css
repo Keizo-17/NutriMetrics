@@ -13,12 +13,72 @@ body {
   color: white;
 }
 
-/* TARJETA */
+/* CARD */
 .card {
   background: rgba(255,255,255,0.05);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
+  width: 320px;
+}
+
+/* LOGO */
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* TITULO */
+h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+/* BOTONES */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* COLORES */
+.verde {
+  background: #22c55e;
+}
+.azul {
+  background: #3b82f6;
+}
+.rojo {
+  background: #ef4444;
+}
+.gris {
+  background: #64748b;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+}
+
+.oculto {
+  display: none;
 }
 
 /* DASHBOARD */
@@ -30,7 +90,7 @@ body {
 }
 
 .panel {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -39,62 +99,4 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* MENU */
-.menu {
-  margin-top: 20px;
-}
-
-/* CONTENIDO */
-.contenido {
-  margin-top: 20px;
-}
-
-/* BOTONES */
-.btn {
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-}
-
-.verde {
-  background: #22c55e;
-}
-
-.azul {
-  background: #3b82f6;
-}
-
-.rojo {
-  background: #ef4444;
-}
-
-.gris {
-  background: #64748b;
-}
-
-/* MODALES */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1e293b;
-  padding: 20px;
-}
-
-/* INPUTS */
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-}
-
-/* OCULTO */
-.oculto {
-  display: none;
 }

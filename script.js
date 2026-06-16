@@ -14,18 +14,12 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 /* UI */
-window.mostrarLogin = () => {
-  document.getElementById("loginModal").classList.remove("oculto");
-}
-
-window.mostrarRegistro = () => {
-  document.getElementById("registroModal").classList.remove("oculto");
-}
-
+window.mostrarLogin = () => loginModal.classList.remove("oculto");
+window.mostrarRegistro = () => registroModal.classList.remove("oculto");
 window.cerrar = () => {
-  document.getElementById("loginModal").classList.add("oculto");
-  document.getElementById("registroModal").classList.add("oculto");
-}
+  loginModal.classList.add("oculto");
+  registroModal.classList.add("oculto");
+};
 
 /* LOGIN */
 window.login = async () => {
@@ -33,11 +27,11 @@ window.login = async () => {
     await signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value);
     window.location.href = "dashboard.html";
   } catch (e) {
-    alert("Error: " + e.message);
+    alert(e.message);
   }
 };
 
-/* REGISTRO ✅ AHORA REGRESA */
+/* REGISTRO */
 window.registrar = async () => {
   try {
     let user = await createUserWithEmailAndPassword(
@@ -53,15 +47,14 @@ window.registrar = async () => {
 
     alert("Cuenta creada ✅");
 
-    // ✅ REGRESA A PORTADA LIMPIO
-    cerrar();
+    cerrar(); // ✅ vuelve a inicio
 
   } catch (e) {
-    alert("Error: " + e.message);
+    alert(e.message);
   }
 };
 
-/* CERRAR SESIÓN ✅ */
+/* LOGOUT */
 window.cerrarSesion = async () => {
   await signOut(auth);
   window.location.href = "index.html";
