@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -13,23 +13,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// MOSTRAR LOGIN
+/* UI */
 window.mostrarLogin = () => {
-  document.getElementById("loginModal").classList.remove("oculto");
+  loginModal.classList.remove("oculto");
 };
 
-// MOSTRAR REGISTRO
 window.mostrarRegistro = () => {
-  document.getElementById("registroModal").classList.remove("oculto");
+  registroModal.classList.remove("oculto");
 };
 
-// CERRAR TODO
 window.cerrar = () => {
-  document.getElementById("loginModal").classList.add("oculto");
-  document.getElementById("registroModal").classList.add("oculto");
+  loginModal.classList.add("oculto");
+  registroModal.classList.add("oculto");
 };
 
-// LOGIN
+/* LOGIN */
 window.login = async () => {
   try {
     await signInWithEmailAndPassword(
@@ -38,16 +36,14 @@ window.login = async () => {
       loginPassword.value
     );
 
-    window.location.href = "dashboard.html";
-
+    location.href = "dashboard.html";
   } catch (e) {
     alert("Error: " + e.message);
   }
 };
 
-// REGISTRAR
+/* REGISTRO */
 window.registrar = async () => {
-
   try {
     let user = await createUserWithEmailAndPassword(
       auth,
@@ -55,6 +51,7 @@ window.registrar = async () => {
       registerPassword.value
     );
 
+    // guardar usuario
     await setDoc(doc(db, "usuarios", user.user.uid), {
       nombre: registerUser.value,
       email: registerEmail.value
@@ -62,7 +59,16 @@ window.registrar = async () => {
 
     alert("Cuenta creada ✅");
 
+    // ✅ REGRESA A PORTADA
+    cerrar();
+
   } catch (e) {
     alert("Error: " + e.message);
   }
+};
+
+/* LOGOUT PARA USAR EN DASHBOARD */
+window.cerrarSesion = async () => {
+  await signOut(auth);
+  location.href = "index.html";
 };

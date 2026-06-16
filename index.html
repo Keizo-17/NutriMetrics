@@ -9,17 +9,17 @@
 
 </head>
 
-<body class="portada-body">
+<body class="portada">
 
-<div class="contenedor">
+<div class="card">
 
-  <div class="logo">NM</div>
+  <img src="logo.png" class="logo">
 
   <h1>NutriMetrics</h1>
-  <p>Sistema inteligente de gestión nutricional</p>
+  <p>Sistema de gestión nutricional</p>
 
-  <button class="btn verde" onclick="mostrarLogin()">Iniciar sesión</button>
-  <button class="btn azul" onclick="mostrarRegistro()">Registrarse</button>
+  <button onclick="mostrarLogin()" class="btn verde">Iniciar sesión</button>
+  <button onclick="mostrarRegistro()" class="btn azul">Registrarse</button>
 
 </div>
 
@@ -30,22 +30,20 @@
   <input id="loginEmail" placeholder="Correo">
   <input id="loginPassword" type="password" placeholder="Contraseña">
 
-  <button class="btn verde" onclick="login()">Entrar</button>
-  <button class="btn gris" onclick="cerrar()">Cancelar</button>
-
+  <button onclick="login()" class="btn verde">Entrar</button>
+  <button onclick="cerrar()" class="btn gris">Cancelar</button>
 </div>
 
 <!-- REGISTRO -->
 <div id="registroModal" class="modal oculto">
-  <h2>Registrar</h2>
+  <h2>Registro</h2>
 
   <input id="registerUser" placeholder="Usuario">
   <input id="registerEmail" placeholder="Correo">
   <input id="registerPassword" type="password" placeholder="Contraseña">
 
-  <button class="btn azul" onclick="registrar()">Crear cuenta</button>
-  <button class="btn gris" onclick="cerrar()">Cancelar</button>
-
+  <button onclick="registrar()" class="btn azul">Crear cuenta</button>
+  <button onclick="cerrar()" class="btn gris">Cancelar</button>
 </div>
 
 <script type="module" src="script.js"></script>

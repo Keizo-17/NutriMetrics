@@ -1,51 +1,40 @@
-body {
+body.portada {
   margin: 0;
   font-family: Arial;
-}
-
-/* FONDO */
-.portada-body {
   height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+
+  background: linear-gradient(135deg, #0f172a, #1e40af);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
 }
 
-/* CONTENEDOR */
-.contenedor {
-  text-align: center;
+.card {
   background: rgba(255,255,255,0.05);
   padding: 40px;
   border-radius: 20px;
+  text-align: center;
+  width: 300px;
 }
 
 /* LOGO */
 .logo {
-  background: linear-gradient(135deg, #3b82f6, #22c55e);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  font-size: 28px;
-  font-weight: bold;
+  width: 70px;
+  margin-bottom: 10px;
 }
 
 /* TITULO */
 h1 {
-  font-size: 40px;
+  font-size: 35px;
+  margin: 10px 0;
 }
 
 /* BOTONES */
 .btn {
-  display: block;
-  width: 200px;
-  margin: 10px auto;
+  width: 100%;
   padding: 12px;
+  margin: 8px 0;
   border: none;
   border-radius: 10px;
   color: white;
@@ -79,18 +68,15 @@ h1 {
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
-  z-index: 10;
-  width: 280px;
+  width: 250px;
 }
 
-/* INPUTS */
 .modal input {
   width: 100%;
   padding: 10px;
   margin: 6px 0;
 }
 
-/* OCULTO */
 .oculto {
   display: none;
 }
