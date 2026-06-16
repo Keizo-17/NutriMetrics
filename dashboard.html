@@ -4,33 +4,57 @@
 <meta charset="UTF-8">
 <title>Dashboard</title>
 
-<link rel="stylesheet" href="styles.css">
+styles.css
 
 </head>
-<body class="dashboard-body">
 
-<h2>NUTRICALCULO</h2>
+<body class="dashboard">
 
-<button onclick="logout()">Cerrar sesión</button>
+<div class="panel">
 
-<hr>
+  <div class="topbar">
 
-<button onclick="mostrarFormulario()">➕ Agregar Paciente</button>
-<button onclick="mostrarLista()">🔍 Buscar Paciente</button>
+    <h2>NutriMetrics</h2>
 
-<div id="formulario" class="hidden">
-  <input id="nombre" placeholder="Nombre">
-  <input id="apellido" placeholder="Apellido">
-  <input id="edad" placeholder="Edad">
-  <input id="peso" placeholder="Peso">
-  <input id="estatura" placeholder="Estatura">
+    <!-- ✅ SOLO 1 BOTON -->
+    <button onclick="cerrarSesion()" class="btn rojo">
+      Cerrar sesión
+    </button>
 
-  <button onclick="guardarPaciente()">Guardar</button>
+  </div>
+
+  <div class="menu">
+
+    <button onclick="mostrarFormulario()" class="btn verde">
+      ➕ Nuevo Paciente
+    </button>
+
+    <button onclick="mostrarLista()" class="btn azul">
+      🔍 Buscar Paciente
+    </button>
+
+  </div>
+
+  <!-- FORMULARIO -->
+  <div id="formulario" class="contenido oculto">
+
+    <input id="nombre" placeholder="Nombre">
+    <input id="apellido" placeholder="Apellido">
+    <input id="edad" placeholder="Edad">
+    <input id="peso" placeholder="Peso">
+
+    <button onclick="guardarPaciente()" class="btn verde">
+      Guardar
+    </button>
+
+  </div>
+
+  <!-- LISTA -->
+  <ul id="lista" class="contenido"></ul>
+
 </div>
 
-<ul id="lista"></ul>
+script.jsscript>
 
-<script type="module" src="script.js"></script>
 </body>
 </html>
-<button onclick="cerrarSesion()">Cerrar sesión</button>

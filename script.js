@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -13,20 +13,19 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-/* MOSTRAR */
+/* UI */
 window.mostrarLogin = () => {
   document.getElementById("loginModal").classList.remove("oculto");
-};
+}
 
 window.mostrarRegistro = () => {
   document.getElementById("registroModal").classList.remove("oculto");
-};
+}
 
-/* CERRAR */
 window.cerrar = () => {
   document.getElementById("loginModal").classList.add("oculto");
   document.getElementById("registroModal").classList.add("oculto");
-};
+}
 
 /* LOGIN */
 window.login = async () => {
@@ -38,7 +37,7 @@ window.login = async () => {
   }
 };
 
-/* REGISTRO */
+/* REGISTRO ✅ AHORA REGRESA */
 window.registrar = async () => {
   try {
     let user = await createUserWithEmailAndPassword(
@@ -54,7 +53,7 @@ window.registrar = async () => {
 
     alert("Cuenta creada ✅");
 
-    // ✅ vuelve a pantalla principal
+    // ✅ REGRESA A PORTADA LIMPIO
     cerrar();
 
   } catch (e) {
@@ -62,7 +61,7 @@ window.registrar = async () => {
   }
 };
 
-/* LOGOUT PARA DASHBOARD */
+/* CERRAR SESIÓN ✅ */
 window.cerrarSesion = async () => {
   await signOut(auth);
   window.location.href = "index.html";
