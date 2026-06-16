@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="dashboard-body">
+
+<h2>NUTRICALCULO</h2>
+
+<button onclick="logout()">Cerrar sesión</button>
+
+<hr>
+
+<button onclick="mostrarFormulario()">➕ Agregar Paciente</button>
+<button onclick="mostrarLista()">🔍 Buscar Paciente</button>
+
+<div id="formulario" class="hidden">
+  <input id="nombre" placeholder="Nombre">
+  <input id="apellido" placeholder="Apellido">
+  <input id="edad" placeholder="Edad">
+  <input id="peso" placeholder="Peso">
+  <input id="estatura" placeholder="Estatura">
+
+  <button onclick="guardarPaciente()">Guardar</button>
+</div>
+
+<ul id="lista"></ul>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
